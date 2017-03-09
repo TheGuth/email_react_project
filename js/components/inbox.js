@@ -1,5 +1,6 @@
 import React from 'react';
 import Data from './data';
+import {Link} from 'react-router';
 
 export default function Inbox(props) {
 
@@ -8,10 +9,7 @@ export default function Inbox(props) {
   const inboxEmails = keys.map((key, index) => {
   	return (
   		<li key={Data.inbox[key].id}>
-  		   <h3>{Data.inbox[key].title}</h3>
-  		   <p>{Data.inbox[key].from}</p>
-  		   <p>{Data.inbox[key].to}</p>
-  		   <p>{Data.inbox[key].content}</p>
+  		    <Link to={/inbox/ + Data.inbox[key].id}><h3>{Data.inbox[key].title}</h3></Link>
   		</li>
   	);
   });
