@@ -2,12 +2,10 @@ import React from 'react';
 import Data from './data';
 
 export default function Inbox(props) {
-  console.log(Data);
 
   const keys = Object.keys(Data.inbox);
  
   const inboxEmails = keys.map((key, index) => {
-  		console.log(Data.inbox[key].title);
   	return (
   		<li key={Data.inbox[key].id}>
   		   <h3>{Data.inbox[key].title}</h3>
@@ -17,8 +15,6 @@ export default function Inbox(props) {
   		</li>
   	);
   });
-
-
 
   return (
     <div>
