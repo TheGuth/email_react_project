@@ -9,6 +9,7 @@ export default class Home extends React.Component {
       spam: Data.spam
     };
 
+    console.log(props);
     console.log(this.state.inbox);
     console.log(this.state.spam);
   };
@@ -18,7 +19,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-
+        {this.props.children}
       </div>
     );
   };
