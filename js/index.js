@@ -6,12 +6,17 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import Home from './components/home';
 import Inbox from './components/inbox';
 import Spam from './components/spam';
+import Email from './components/email';
 
 const routes = (
   <Router history={hashHistory}>
       <Route path="/" component={Home}>
-          <Route path="inbox" component={Inbox} />
-          <Route path="spam" component={Spam} />
+          <Route path="inbox" component={Inbox}>
+          	<Route path=":emailId" component={Email}/>
+          </Route>
+          <Route path="spam" component={Spam}>
+          	<Route path=":emailId" component={Email}/>
+          </Route>
       </Route>
   </Router>
 );

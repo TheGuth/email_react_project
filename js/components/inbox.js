@@ -18,7 +18,8 @@ export default function Inbox(props) {
     <div>
     	<ul>
     		{inboxEmails}
-    	</ul>	
+    	</ul>
+    	{props.children}
     </div>
   );
 }
