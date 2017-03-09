@@ -1,5 +1,6 @@
 import React from 'react';
 import Data from './data';
+import {Link} from 'react-router';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -19,7 +20,22 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        {this.props.children}
+        <nav>
+          <ul>
+            <li><button>
+              <Link to={'/'}>Home</Link>
+            </button></li>
+            <li><button>
+              <Link to={'/inbox'} >Inbox</Link>
+            </button></li>
+            <li><button>
+              <Link to={'/spam'} >Spam</Link>
+            </button></li>
+          </ul>
+        </nav>
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   };
