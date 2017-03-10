@@ -4,12 +4,12 @@ import {Link} from 'react-router';
 
 export default function Inbox(props) {
 
-  const keys = Object.keys(Data.inbox);
+  const keys = Object.keys(Data[props.params.mailboxName]);
  
   const inboxEmails = keys.map((key, index) => {
   	return (
-  		<li key={Data.inbox[key].id}>
-  		    <Link to={/inbox/ + Data.inbox[key].id}><h3>{Data.inbox[key].title}</h3></Link>
+  		<li key={Data[props.params.mailboxName][key].id}>
+  		    <Link to={/inbox/ + Data[props.params.mailboxName][key].id}><h3>{Data[props.params.mailboxName][key].title}</h3></Link>
   		</li>
   	);
   });

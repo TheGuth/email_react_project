@@ -11,10 +11,7 @@ import Email from './components/email';
 const routes = (
   <Router history={hashHistory}>
       <Route path="/" component={Home}>
-          <Route path="inbox" component={Inbox}>
-          	<Route path=":emailId" component={Email}/>
-          </Route>
-          <Route path="spam" component={Spam}>
+          <Route path=":mailboxName" component={Inbox}>
           	<Route path=":emailId" component={Email}/>
           </Route>
       </Route>

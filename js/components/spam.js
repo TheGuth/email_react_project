@@ -4,12 +4,12 @@ import {Link} from 'react-router';
 
 export default function Spam(props) {
 
-  const keys = Object.keys(Data.spam);
+  const keys = Object.keys(Data[props.params.mailboxName]);
  
   const spamEmails = keys.map((key, index) => {
   	return (
   		<li key={Data.spam[key].id}>
-  		   <Link to={/spam/ + Data.spam[key].id}><h3>{Data.spam[key].title}</h3></Link>
+  		   <Link to={/spam/ + Data[props.params.mailboxName][key].id}><h3>{Data[props.params.mailboxName][key].title}</h3></Link>
   		</li>
   	);
   });
